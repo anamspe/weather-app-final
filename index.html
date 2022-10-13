@@ -33,6 +33,7 @@
                     placeholder=" Search City"
                     name="search"
                     autofocus="on"
+                    autocomplete="off"
                   />
                   <button type="submit" class="btn btn-outline-info btn-sm">
                     Search
@@ -44,7 +45,7 @@
               </div>
             </div>
             <br />
-            <h5 id="day-and-time">Friday | 15:28</h5>
+            <h5 id="day-and-time"></h5>
             <br />
             <div class="row">
               <div class="col">
@@ -65,21 +66,16 @@
                 <p class="temp-description"></p>
               </div>
               <div class="col">
-                <img
-                  src="images/sun.png"
-                  alt="Sun"
-                  width="175px"
-                  class="main-temp-img"
-                />
+                <img src="" alt="Sun" width="175px" class="main-temp-img" />
                 <p class="sunrise-sunset">
-                  Sunrise: 06:31 <br />
-                  Sunset: 19:51
+                  Sunrise: <span id="sunrise-time">06:31 </span> <br />
+                  Sunset: <span id="sunset-time">19:51</span>
                 </p>
               </div>
               <div class="row">
                 <div class="col next-days">
                   Saturday <br /><img
-                    src="images/sun behind cloud.png"
+                    src="images/02d.png"
                     alt="cloudy"
                     width="30px"
                   />
@@ -88,37 +84,25 @@
                 </div>
                 <div class="col next-days">
                   Sunday <br />
-                  <img
-                    src="images/cloud with rain.png"
-                    alt="rain"
-                    width="30px"
-                  />
+                  <img src="images/09d.png" alt="rain" width="30px" />
                   <br />
                   <span class="temp-range"> 14º - 20º</span>
                 </div>
                 <div class="col next-days">
                   Monday <br />
-                  <img
-                    src="images/cloud with rain.png"
-                    alt="rain"
-                    width="30px"
-                  />
+                  <img src="images/09d.png" alt="rain" width="30px" />
                   <br />
                   <span class="temp-range">13º - 23º</span>
                 </div>
                 <div class="col next-days">
                   Tuesday <br />
-                  <img src="images/sun.png" alt="sun" width="30px" />
+                  <img src="images/01d.png" alt="sun" width="30px" />
                   <br />
                   <span class="temp-range">11º - 26º</span>
                 </div>
                 <div class="col next-days">
                   Wednesday <br />
-                  <img
-                    src="images/sun behind cloud.png"
-                    alt="cloudy"
-                    width="30px"
-                  />
+                  <img src="images/02d.png" alt="cloudy" width="30px" />
                   <br />
                   <span class="temp-range">12º - 25º</span>
                 </div>
