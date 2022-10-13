@@ -27,6 +27,8 @@ let time = `${hours}:${minutes}`;
 let currentDayTime = document.querySelector("#day-and-time");
 currentDayTime.innerHTML = `${day} | ${time}`;
 
+// Main Temperature Data
+
 function displayTemperature(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#temperature");
