@@ -39,7 +39,7 @@ body {
   font-size: 25px;
 }
 
-.current-city {
+.location {
   font-weight: 500;
   font-size: 23px;
 }
@@ -74,6 +74,10 @@ body {
   font-size: 15px;
   font-weight: 500;
   opacity: 0.8;
+}
+
+.temp-description:first-letter {
+  text-transform: capitalize;
 }
 
 .main-temp-img {
