@@ -1,0 +1,105 @@
+body {
+  margin: 20px;
+}
+
+.form-control-sm {
+  display: inline-flex;
+  width: 50%;
+  margin: 0;
+}
+
+.btn {
+  position: relative;
+  top: -1.5px;
+}
+
+.home-icon-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.home-icon {
+  opacity: 0.5;
+  position: relative;
+  /* left: 270px; */
+}
+
+.home-icon:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.location-icon {
+  color: red;
+  font-size: 25px;
+}
+
+.current-city {
+  font-weight: 500;
+  font-size: 23px;
+}
+
+.current-temp {
+  font-size: 66px;
+  margin: 11px;
+}
+
+.temp-format {
+  font-size: 18px;
+  letter-spacing: 4px;
+  display: flex;
+  position: relative;
+
+  top: -40px;
+  left: 95px;
+}
+
+.main-temp-range {
+  position: relative;
+  left: 15px;
+  top: -45px;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.temp-description {
+  position: relative;
+  left: 15px;
+  top: -45px;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.main-temp-img {
+  display: block;
+  margin: 0 auto;
+}
+
+.sunrise-sunset {
+  text-align: center;
+  font-size: 10px;
+  margin: 5px;
+  opacity: 0.7;
+}
+
+.next-days {
+  margin: 25px 0;
+  font-size: 15px;
+  text-align: center;
+  transition: all 250ms ease-in-out;
+}
+
+.next-days:hover {
+  background-color: rgba(253, 139, 101, 0.288);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.temp-range {
+  font-size: 12px;
+}
+
+.footer {
+  font-size: 12px;
+}
