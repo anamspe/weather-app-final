@@ -59,6 +59,16 @@ body {
   left: 95px;
 }
 
+.temp-format .active {
+  color: #212529;
+  cursor: default;
+  text-decoration: none;
+}
+
+.temp-format .active:hover {
+  text-decoration: none;
+}
+
 .main-temp-range {
   position: relative;
   left: 15px;
