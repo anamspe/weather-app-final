@@ -90,6 +90,12 @@ body {
   text-transform: capitalize;
 }
 
+.wind {
+  position: relative;
+  top: -30px;
+  left: 15px;
+}
+
 .main-temp-img {
   display: block;
   margin: 0 auto;

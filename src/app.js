@@ -27,13 +27,15 @@ currentDayTime.innerHTML = `${day} | ${time}`;
 // Main Temperature Data and Home Button
 
 function displayTemperature(response) {
-  console.log(response);
+  // console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#current-city");
   let countryElement = document.querySelector("#country");
   let minTempElement = document.querySelector("#min-temp");
   let maxTempElement = document.querySelector("#max-temp");
   let tempDescriptionElement = document.querySelector(".temp-description");
+  let windElement = document.querySelector(".wind-speed");
+  let humidityElement = document.querySelector(".humidity");
   let iconElement = document.querySelector(".main-temp-img");
   let sunriseElement = document.querySelector("#sunrise-time");
   let sunsetElement = document.querySelector("#sunset-time");
@@ -46,6 +48,8 @@ function displayTemperature(response) {
   minTempElement.innerHTML = `${Math.round(response.data.main.temp_min)}º`;
   maxTempElement.innerHTML = `${Math.round(response.data.main.temp_max)}º`;
   tempDescriptionElement.innerHTML = response.data.weather[0].description;
+  windElement.innerHTML = `${Math.round(response.data.wind.speed)}`;
+  humidityElement.innerHTML = response.data.main.humidity;
   let icon = response.data.weather[0].icon;
   iconElement.setAttribute("src", `images/${icon}.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
