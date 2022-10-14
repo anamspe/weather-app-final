@@ -38,6 +38,8 @@ function displayTemperature(response) {
   let sunriseElement = document.querySelector("#sunrise-time");
   let sunsetElement = document.querySelector("#sunset-time");
 
+  celsiusTemp = response.data.main.temp;
+
   temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}º`;
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
@@ -88,3 +90,26 @@ function getCurrentPosition(event) {
 
 let homeButton = document.querySelector("#home");
 homeButton.addEventListener("click", getCurrentPosition);
+
+// Celsius and Fahrenheit conversion
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}º`;
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = `${Math.round(celsiusTemp)}º`;
+}
+
+let celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-temp");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-temp");
+celsiusLink.addEventListener("click", showCelsiusTemp);
