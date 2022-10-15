@@ -29,7 +29,13 @@ currentDayTime.innerHTML = `${day} | ${time}`;
 function formatDate(timestamp) {
   let time = new Date(timestamp);
   let sunHour = time.getHours();
+  if (sunHour < 10) {
+    sunHour = `0${sunHour}`;
+  }
   let sunMinute = time.getMinutes();
+  if (sunMinute < 10) {
+    sunMinute = `0${sunMinute}`;
+  }
   return `${sunHour}:${sunMinute}`;
 }
 
