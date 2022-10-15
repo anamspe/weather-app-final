@@ -26,6 +26,13 @@ currentDayTime.innerHTML = `${day} | ${time}`;
 
 // Main Temperature Data and Home Button
 
+function formatDate(timestamp) {
+  let time = new Date(timestamp);
+  let sunHour = time.getHours();
+  let sunMinute = time.getMinutes();
+  return `${sunHour}:${sunMinute}`;
+}
+
 function displayTemperature(response) {
   // console.log(response);
   let temperatureElement = document.querySelector("#temperature");
@@ -54,8 +61,8 @@ function displayTemperature(response) {
   iconElement.setAttribute("src", `images/${icon}.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  sunriseElement.innerHTML = response.data.sys.sunrise;
-  sunsetElement.innerHTML = response.data.sys.sunset;
+  sunriseElement.innerHTML = formatDate(response.data.sys.sunrise * 1000);
+  sunsetElement.innerHTML = formatDate(response.data.sys.sunset * 1000);
 }
 
 function search(city) {
