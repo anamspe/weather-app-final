@@ -109,15 +109,48 @@ body {
 }
 
 .next-days {
-  margin: 25px 0;
+  margin: 25px;
+  text-align: center;
+  padding: 25px;
+  transition: all 250ms ease-in-out;
+  border: rgba(128, 128, 128, 0.377) 1px solid;
+  border-radius: 10px;
+}
+
+.weather-date {
+  padding: 15px;
+}
+
+.weather-forecast-temp {
+  padding: 15px;
+}
+
+.forecast-box {
+  border: rgba(128, 128, 128, 0.377) 1px solid;
+  border-radius: 7px;
+}
+
+.forecast-min {
+  margin-right: 4px;
+}
+
+.forecast-max {
+  margin-left: 4px;
+}
+
+/*.next-days {
+  margin: 35px 0;
+  padding: 25px;
   font-size: 15px;
   text-align: center;
   transition: all 250ms ease-in-out;
-}
+  border: rgba(128, 128, 128, 0.377) 1px solid;
+  border-radius: 15px;
+} */
 
 .next-days:hover {
   background-color: rgba(253, 139, 101, 0.288);
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
