@@ -39,6 +39,36 @@ function formatDate(timestamp) {
   return `${sunHour}:${sunMinute}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Mon", "Tue", "Wed", "Thu"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-3 next-days">
+        <div class="weather-date">${day}</div>
+        <img
+          src="images/01d.png"
+          alt="Sun"
+          width="45px"
+          class="forecast-icon"
+        />
+        <div class="weather-forecast-temp">
+          <span class="forecast-min"> 13º</span>
+          <span class="forecast-max">19º</span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function displayTemperature(response) {
   // console.log(response);
   let temperatureElement = document.querySelector("#temperature");
@@ -85,6 +115,7 @@ function getCity(event) {
 }
 
 search(`Vancouver`);
+displayForecast();
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", getCity);
