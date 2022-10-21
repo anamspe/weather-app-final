@@ -39,34 +39,52 @@ function formatDate(timestamp) {
   return `${sunHour}:${sunMinute}`;
 }
 
-function displayForecast() {
+function formatForecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Mon", "Tue", "Wed", "Thu"];
-
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-3 next-days">
-        <div class="weather-date">${day}</div>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-3 next-days">
+        <div class="weather-date">${formatForecastDate(forecastDay.dt)}</div>
         <img
-          src="images/01d.png"
+          src="images/${forecastDay.weather[0].icon}.png"
           alt="Sun"
           width="45px"
           class="forecast-icon"
         />
         <div class="weather-forecast-temp">
-          <span class="forecast-min"> 13º</span>
-          <span class="forecast-max">19º</span>
+          <span class="forecast-min"> ${Math.round(
+            forecastDay.temp.min
+          )}º</span>
+          <span class="forecast-max">${Math.round(forecastDay.temp.max)}º</span>
         </div>
       </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `97f8e93f00107773f88eafd933ce86b7`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -99,6 +117,8 @@ function displayTemperature(response) {
 
   sunriseElement.innerHTML = formatDate(response.data.sys.sunrise * 1000);
   sunsetElement.innerHTML = formatDate(response.data.sys.sunset * 1000);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -115,7 +135,6 @@ function getCity(event) {
 }
 
 search(`Vancouver`);
-displayForecast();
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", getCity);
