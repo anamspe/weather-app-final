@@ -68,7 +68,9 @@ function displayForecast(response) {
           <span class="forecast-min"> ${Math.round(
             forecastDay.temp.min
           )}º</span>
-          <span class="forecast-max">${Math.round(forecastDay.temp.max)}º</span>
+          <span class="forecast-max"><strong>${Math.round(
+            forecastDay.temp.max
+          )}</strong>º</span>
         </div>
       </div>
   `;
@@ -157,30 +159,3 @@ function getCurrentPosition(event) {
 
 let homeButton = document.querySelector("#home");
 homeButton.addEventListener("click", getCurrentPosition);
-
-// Celsius and Fahrenheit conversion
-
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = `${Math.round(fahrenheitTemp)}º`;
-}
-
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  temperatureElement.innerHTML = `${Math.round(celsiusTemp)}º`;
-}
-
-let celsiusTemp = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-temp");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-temp");
-celsiusLink.addEventListener("click", showCelsiusTemp);

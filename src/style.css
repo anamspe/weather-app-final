@@ -56,17 +56,7 @@ body {
   position: relative;
 
   top: -40px;
-  left: 95px;
-}
-
-.temp-format .active {
-  color: #212529;
-  cursor: default;
-  text-decoration: none;
-}
-
-.temp-format .active:hover {
-  text-decoration: none;
+  left: 85px;
 }
 
 .main-temp-range {
@@ -131,6 +121,7 @@ body {
 
 .forecast-min {
   margin-right: 4px;
+  opacity: 0.7;
 }
 
 .forecast-max {
