@@ -111,7 +111,7 @@ function displayTemperature(response) {
   minTempElement.innerHTML = `${Math.round(response.data.main.temp_min)}º`;
   maxTempElement.innerHTML = `${Math.round(response.data.main.temp_max)}º`;
   tempDescriptionElement.innerHTML = response.data.weather[0].description;
-  windElement.innerHTML = `${Math.round(response.data.wind.speed)}`;
+  windElement.innerHTML = `${Math.round(response.data.wind.speed * 3.6)}`;
   humidityElement.innerHTML = response.data.main.humidity;
   let icon = response.data.weather[0].icon;
   iconElement.setAttribute("src", `images/${icon}.png`);
